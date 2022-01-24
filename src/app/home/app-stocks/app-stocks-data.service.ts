@@ -28,11 +28,11 @@ export class AppStocksDataService {
   return this.restApiService.getApiAcess(`https://api.polygon.io/v1/open-close/${data.ticker}/${this.formatDate(data.last_updated_utc)}`,params)
 
   }
-   formatDate(date) {
+  formatDate(date) {
     var d = new Date(date),
    
         month = '' + (d.getMonth() + 1),
-        day = '' + (d.getDay()==6||d.getDay()==0)?d.getDate()-1:d.getDate(),
+        day = (d.getDay()==6)?d.getDate()-1:((d.getDay()==0)?d.getDate()-2:d.getDay()),
         year = d.getFullYear();
 
     if (month.length < 2) 
