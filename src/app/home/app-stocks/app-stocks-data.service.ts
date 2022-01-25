@@ -32,7 +32,7 @@ export class AppStocksDataService {
     var d = new Date(date),
    
         month = '' + (d.getMonth() + 1),
-        day = (d.getDay()==6)?d.getDate()-1:((d.getDay()==0)?d.getDate()-2:d.getDay()),
+        day = (d.getDay()==6)?d.getDate()-1:((d.getDay()==0)?d.getDate()-2:d.getDate()),
         year = d.getFullYear();
 
     if (month.length < 2) 
