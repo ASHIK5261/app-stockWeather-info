@@ -31,14 +31,14 @@ export class AppStocksDataService {
   formatDate(date) {
     var d = new Date(date),
    
-        month = '' + (d.getMonth() + 1),
-        day = (d.getDay()==6)?d.getDate()-1:((d.getDay()==0)?d.getDate()-2:d.getDate()),
+        month = String( (d.getMonth() + 1)),
+        day = String((d.getDay()==6)?d.getDate()-1:((d.getDay()==0)?d.getDate()-2:d.getDate())),
         year = d.getFullYear();
 
     if (month.length < 2) 
         month = '0' + month;
-    // if (day.length < 2) 
-    //     day = '0' + day;
+    if (day.length < 2) 
+        day = '0' + day;
 
     return [year, month, day].join('-');
 }
